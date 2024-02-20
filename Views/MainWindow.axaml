@@ -6,8 +6,11 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="visualkey.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
+        SystemDecorations="None"
+        Width="550" 
+        Height="250"
         Icon="/Assets/avalonia-logo.ico"
-        Title="visualkey">
+        Title="VisualKey Launcher">
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
@@ -15,6 +18,13 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+    <Window.Content>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <Border BorderBrush="White" BorderThickness="0,0,0,1">
+                <TextBlock Margin="10 10" x:Name="TitleText" FontSize="25" Foreground="White">
+                    VisualKey Studio
+                </TextBlock>
+            </Border>
+        </StackPanel>
+    </Window.Content>
 </Window>
